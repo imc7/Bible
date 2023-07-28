@@ -10,15 +10,18 @@
   <ItemGroup>
     <None Remove="resources\bible.ico" />
     <None Remove="resources\bible.png" />
+    <None Remove="resources\books.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="resources\bible.ico" />
     <Resource Include="resources\bible.png" />
+    <Resource Include="resources\books.json" />
   </ItemGroup>
 
 </Project>

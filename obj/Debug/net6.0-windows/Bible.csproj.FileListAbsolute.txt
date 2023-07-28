@@ -24,3 +24,4 @@ D:\Documents\VisualStudioProjects\Bible\bin\Debug\net6.0-windows\MaterialDesignT
 D:\Documents\VisualStudioProjects\Bible\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\Documents\VisualStudioProjects\Bible\obj\Debug\net6.0-windows\App.baml
 D:\Documents\VisualStudioProjects\Bible\obj\Debug\net6.0-windows\Bible.csproj.CopyComplete
+D:\Documents\VisualStudioProjects\Bible\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

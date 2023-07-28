@@ -1,0 +1,266 @@
+[
+    {
+        "number": 1,
+        "title": "Génesis"
+    },
+    {
+        "number": 2,
+        "title": "Éxodo"
+    },
+    {
+        "number": 3,
+        "title": "Levítico"
+    },
+    {
+        "number": 4,
+        "title": "Números"
+    },
+    {
+        "number": 5,
+        "title": "Deuteronomio"
+    },
+    {
+        "number": 6,
+        "title": "Josué"
+    },
+    {
+        "number": 7,
+        "title": "Jueces"
+    },
+    {
+        "number": 8,
+        "title": "Rut"
+    },
+    {
+        "number": 9,
+        "title": "1 Samuel"
+    },
+    {
+        "number": 10,
+        "title": "2 Samuel"
+    },
+    {
+        "number": 11,
+        "title": "1 Reyes"
+    },
+    {
+        "number": 12,
+        "title": "2 Reyes"
+    },
+    {
+        "number": 13,
+        "title": "1 Crónicas"
+    },
+    {
+        "number": 14,
+        "title": "2 Crónicas"
+    },
+    {
+        "number": 15,
+        "title": "Esdras"
+    },
+    {
+        "number": 16,
+        "title": "Nehemías"
+    },
+    {
+        "number": 17,
+        "title": "Ester"
+    },
+    {
+        "number": 18,
+        "title": "Job"
+    },
+    {
+        "number": 19,
+        "title": "Salmos"
+    },
+    {
+        "number": 20,
+        "title": "Proverbios"
+    },
+    {
+        "number": 21,
+        "title": "Eclesiastés"
+    },
+    {
+        "number": 22,
+        "title": "Cantares"
+    },
+    {
+        "number": 23,
+        "title": "Isaías"
+    },
+    {
+        "number": 24,
+        "title": "Jeremías"
+    },
+    {
+        "number": 25,
+        "title": "Lamentaciones"
+    },
+    {
+        "number": 26,
+        "title": "Ezequiel"
+    },
+    {
+        "number": 27,
+        "title": "Daniel"
+    },
+    {
+        "number": 28,
+        "title": "Oseas"
+    },
+    {
+        "number": 29,
+        "title": "Joel"
+    },
+    {
+        "number": 30,
+        "title": "Amós"
+    },
+    {
+        "number": 31,
+        "title": "Abdías"
+    },
+    {
+        "number": 32,
+        "title": "Jonás"
+    },
+    {
+        "number": 33,
+        "title": "Miqueas"
+    },
+    {
+        "number": 34,
+        "title": "Nahum"
+    },
+    {
+        "number": 35,
+        "title": "Habacuc"
+    },
+    {
+        "number": 36,
+        "title": "Sofonías"
+    },
+    {
+        "number": 37,
+        "title": "Hageo"
+    },
+    {
+        "number": 38,
+        "title": "Zacarías"
+    },
+    {
+        "number": 39,
+        "title": "Malaquías"
+    },
+    {
+        "number": 40,
+        "title": "Mateo"
+    },
+    {
+        "number": 41,
+        "title": "Marcos"
+    },
+    {
+        "number": 42,
+        "title": "Lucas"
+    },
+    {
+        "number": 43,
+        "title": "Juan"
+    },
+    {
+        "number": 44,
+        "title": "Hechos"
+    },
+    {
+        "number": 45,
+        "title": "Romanos"
+    },
+    {
+        "number": 46,
+        "title": "1 Corintios"
+    },
+    {
+        "number": 47,
+        "title": "2 Corintios"
+    },
+    {
+        "number": 48,
+        "title": "Gálatas"
+    },
+    {
+        "number": 49,
+        "title": "Efesios"
+    },
+    {
+        "number": 50,
+        "title": "Filipenses"
+    },
+    {
+        "number": 51,
+        "title": "Colosenses"
+    },
+    {
+        "number": 52,
+        "title": "1 Tesalonicenses"
+    },
+    {
+        "number": 53,
+        "title": "2 Tesalonicenses"
+    },
+    {
+        "number": 54,
+        "title": "1 Timoteo"
+    },
+    {
+        "number": 55,
+        "title": "2 Timoteo"
+    },
+    {
+        "number": 56,
+        "title": "Tito"
+    },
+    {
+        "number": 57,
+        "title": "Filemón"
+    },
+    {
+        "number": 58,
+        "title": "Hebreos"
+    },
+    {
+        "number": 59,
+        "title": "Santiago"
+    },
+    {
+        "number": 60,
+        "title": "1 Pedro"
+    },
+    {
+        "number": 61,
+        "title": "2 Pedro"
+    },
+    {
+        "number": 62,
+        "title": "1 Juan"
+    },
+    {
+        "number": 63,
+        "title": "2 Juan"
+    },
+    {
+        "number": 64,
+        "title": "3 Juan"
+    },
+    {
+        "number": 65,
+        "title": "Judas"
+    },
+    {
+        "number": 66,
+        "title": "Apocalipsis"
+    }
+]
