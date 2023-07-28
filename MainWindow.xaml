@@ -46,18 +46,18 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="29"/>
+                <ColumnDefinition Width="29"/>
                 <ColumnDefinition Width="5"/>
             </Grid.ColumnDefinitions>
 
             <Button
                 Grid.Row="0"
                 Grid.Column="1"
-                Width="20"
-                Height="20"
+                Width="24"
+                Height="24"
                 Cursor="Hand"
-                    ToolTip="Cerrar">
+                 ToolTip="Cerrar">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#FFFFFF"/>
@@ -72,11 +72,14 @@
                 </Button.Style>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="20" Height="20"
-                                    CornerRadius="10"
-                                    Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
+                        <Border 
+                            Width="24" 
+                            Height="24"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
@@ -89,12 +92,36 @@
             <Button
                 Grid.Row="0"
                 Grid.Column="2"
-                Width="20"
-                Height="20"
-                IsEnabled="{Binding DataContext.ControlsEnabled, 
-                RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-                ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                Width="24"
+                Height="24"
+                Cursor="Hand"
+                 ToolTip="Cerrar"
+                >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FFFFFF"/>
+                        <Setter Property="Opacity" Value="0.4"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFF"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Width="24" 
+                            Height="24"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 <materialDesign:PackIcon
                     Width="15"
                     Height="15"
