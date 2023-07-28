@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+o8VhMS3tzj5CilrstURLaflzvyTGUMGda02iPp6pzFKoFn+U2RBZYwaIT53+f6SRxlfK/40E1zMDAqI0eOsDA==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\VisualStudioProjects\\Bible\\Bible.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ismon\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\ismon\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\ismon\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
