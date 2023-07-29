@@ -11,6 +11,15 @@ namespace Bible.tools
 {
     class JsonTool
     {
+        // Get quote
+        public static QuoteModel ReadQuote(string title, int chapter, int verse)
+        {
+            QuoteModel response=null;
+
+            return response;
+        }
+
+
         // Looking for book title
         public static List<BookModel> lookingFor(string title)
         {

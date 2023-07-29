@@ -145,6 +145,66 @@
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
 
+            <TextBox x:Name="txtTitle" 
+                    Width="120" 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                    Margin="10 0 0 0"
+                     FontSize="16"
+                    Foreground="#FFF"
+                    CaretBrush="#FFF"
+                    BorderBrush="#FFF"
+                    materialDesign:HintAssist.Hint="Libro"  
+                    materialDesign:HintAssist.IsFloating="True"
+                    materialDesign:HintAssist.Foreground="#FFF"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
+                    PreviewTextInput="txtTitle_previewTextInput" 
+                    TextChanged="txtTitle_TextChanged" 
+                    KeyUp="txtTitle_KeyUp">
+            </TextBox>
+
+            <TextBox x:Name="txtChapter" 
+                    Width="70" 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                    Margin="150 0 0 0"
+                     FontSize="16"
+                    Foreground="#FFF"
+                    CaretBrush="#FFF"
+                    BorderBrush="#FFF"
+                    materialDesign:HintAssist.Hint="Capítulo"  
+                    materialDesign:HintAssist.IsFloating="True"
+                    materialDesign:HintAssist.Foreground="#FFF"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
+                    PreviewTextInput="txtChapter_previewTextInput" 
+                    TextChanged="txtChapter_TextChanged" 
+                    KeyUp="txtChapter_KeyUp">
+            </TextBox>
+
+            <TextBox x:Name="txtVerse" 
+                    Width="70" 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="240 0 0 0"
+                    FontSize="16"
+                    Foreground="#FFF"
+                    CaretBrush="#FFF"
+                    BorderBrush="#FFF"
+                    materialDesign:HintAssist.Hint="Versículo"  
+                    materialDesign:HintAssist.IsFloating="True"
+                    materialDesign:HintAssist.Foreground="#FFF"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
+                    PreviewTextInput="txtVerse_previewTextInput" 
+                    TextChanged="txtVerse_TextChanged" 
+                    KeyUp="txtVerse_KeyUp">
+            </TextBox>
+
             <Button x:Name="btnPlay"
                 Grid.Row="0"
                 Grid.Column="0"
@@ -185,74 +245,15 @@
                     Height="30"
                     Kind="Play"/>
             </Button>
-
-            <TextBox x:Name="txtTitle" 
-                    Width="120" 
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                    Margin="10 0 0 0"
-                     FontSize="16"
-                    Foreground="#FFF"
-                    CaretBrush="#FFF"
-                    BorderBrush="#FFF"
-                    materialDesign:HintAssist.Hint="Libro"  
-                    materialDesign:HintAssist.IsFloating="True"
-                    materialDesign:HintAssist.Foreground="#FFF"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
-                    PreviewTextInput="txtTitle_previewTextInput" 
-                    TextChanged="txtTitle_TextChanged" 
-                    KeyUp="txtTitle_KeyUp">
-            </TextBox>
-
-            <TextBox x:Name="txtChapter" 
-                    Width="70" 
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                    Margin="140 0 0 0"
-                     FontSize="16"
-                    Foreground="#FFF"
-                    CaretBrush="#FFF"
-                    BorderBrush="#FFF"
-                    materialDesign:HintAssist.Hint="Capítulo"  
-                    materialDesign:HintAssist.IsFloating="True"
-                    materialDesign:HintAssist.Foreground="#FFF"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
-                    PreviewTextInput="txtChapter_previewTextInput" 
-                    TextChanged="txtChapter_TextChanged" 
-                    KeyUp="txtChapter_KeyUp">
-            </TextBox>
-
-            <TextBox x:Name="txtVerse" 
-                    Width="70" 
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                    Margin="220 0 0 0"
-                     FontSize="16"
-                    Foreground="#FFF"
-                    CaretBrush="#FFF"
-                    BorderBrush="#FFF"
-                    materialDesign:HintAssist.Hint="Versículo"  
-                    materialDesign:HintAssist.IsFloating="True"
-                    materialDesign:HintAssist.Foreground="#FFF"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#FFF" 
-                    PreviewTextInput="txtVerse_previewTextInput" 
-                    TextChanged="txtVerse_TextChanged" 
-                    KeyUp="txtVerse_KeyUp">
-            </TextBox>
         </Grid>
 
 
         <!--List-->
-        <ListBox x:Name="lbxBooks" 
+        <ListBox 
+            x:Name="lbxBooks" 
             Grid.Row="2" 
-                 Width="120"
-                 HorizontalAlignment="Left"
+            Width="120"
+            HorizontalAlignment="Left"
             Margin="10,10,10,10"
             Foreground="#FFF" 
             SelectionChanged="lbxBooks_SelectionChanged" 

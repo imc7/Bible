@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -23,9 +22,14 @@ namespace Bible
     /// </summary>
     public partial class MainWindow : Window
     {
+        Text text;
         public MainWindow()
         {
             InitializeComponent();
+
+            // Init values
+            btnPlay.IsEnabled = false;
+            txtTitle.Focus();
         }
 
 
@@ -44,6 +48,36 @@ namespace Bible
             Application.Current.Shutdown();
         }
 
+        // Match with 2 digits
+        private bool isMatchTwoDigitsMethod(string value)
+        {
+            return new Regex("^[1-9]{1,2}$").IsMatch(value);
+        }
+
+        // Match with three digits
+        private bool isMatchThreeDigitsMethod(string value)
+        {
+            return new Regex("^[1-5]{1}\\d{0,2}$").IsMatch(value);
+        }
+
+        private void enablePlayButton()
+        {
+            if (
+                string.IsNullOrEmpty(txtTitle.Text) || string.IsNullOrWhiteSpace(txtTitle.Text) ||
+                string.IsNullOrEmpty(txtChapter.Text) || string.IsNullOrWhiteSpace(txtChapter.Text) ||
+                string.IsNullOrEmpty(txtVerse.Text) || string.IsNullOrWhiteSpace(txtVerse.Text)
+                )
+            {
+                btnPlay.IsEnabled = false;
+            }
+            else
+            {
+                btnPlay.IsEnabled = true;
+            }
+        }
+
+        // Controls methods ###########################################################
+
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -56,12 +90,31 @@ namespace Bible
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
+            string title = txtTitle.Text;
+            int chapter = int.Parse(txtChapter.Text);
+            int verse = int.Parse(txtVerse.Text);
+            QuoteModel quote = JsonTool.ReadQuote(title,chapter,verse);
+
+            if (text is null || !text.IsVisible)
+            {
+                text = new Text();
+                text.Show();
+            }
+            text.quote = quote;
+            text.initializePlayText();
+
+
+            txtTitle.Clear();
+            txtChapter.Clear();
+            txtVerse.Clear();
+            lbxBooks.Items.Clear();
+            txtTitle.Focus();
 
         }
 
         private void txtTitle_previewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            enablePlayButton();
         }
 
         private void txtTitle_KeyUp(object sender, KeyEventArgs e)
@@ -142,12 +195,24 @@ namespace Bible
 
         private void txtChapter_previewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            string value = txtChapter.Text + e.Text;
+            bool isMatchTwoDigits = isMatchTwoDigitsMethod(value);
+            bool isMatchThreeDigits = isMatchThreeDigitsMethod(value);
+            if (isMatchTwoDigits || isMatchThreeDigits)
+            {
+                int valueInt = int.Parse(value);
+                e.Handled = !((isMatchTwoDigits || isMatchThreeDigits) && valueInt < (int.Parse(Constants.maxBookChapter) + 1));
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtChapter_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            enablePlayButton();
+            lbxBooks.Items.Clear();
         }
 
         private void txtChapter_KeyUp(object sender, KeyEventArgs e)
@@ -162,12 +227,24 @@ namespace Bible
 
         private void txtVerse_previewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            string value = txtVerse.Text + e.Text;
+            bool isMatchTwoDigits = isMatchTwoDigitsMethod(value);
+            bool isMatchThreeDigits = isMatchThreeDigitsMethod(value);
+            if (isMatchTwoDigits || isMatchThreeDigits)
+            {
+                int valueInt = int.Parse(value);
+                e.Handled = !((isMatchTwoDigits || isMatchThreeDigits) && valueInt < (int.Parse(Constants.maxBookVerse) + 1));
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtVerse_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            enablePlayButton();
+            lbxBooks.Items.Clear();
         }
 
         private void lbxBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -195,6 +272,6 @@ namespace Bible
             lbxBooks.Items.Clear();
         }
 
-        
+
     }
 }
