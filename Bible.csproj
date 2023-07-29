@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="resources\background.png" />
     <None Remove="resources\bible.ico" />
     <None Remove="resources\bible.png" />
     <None Remove="resources\books.json" />
+    <None Remove="resources\books\1 Corintios.json" />
+    <None Remove="resources\books\1 Crónicas.json" />
+    <None Remove="resources\books\1 Juan.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,9 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="resources\background.png" />
     <Resource Include="resources\bible.ico" />
     <Resource Include="resources\bible.png" />
     <Resource Include="resources\books.json" />
+    <Resource Include="resources\books\1 Corintios.json" />
+    <Resource Include="resources\books\1 Crónicas.json" />
+    <Resource Include="resources\books\1 Juan.json" />
   </ItemGroup>
 
 </Project>

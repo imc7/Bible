@@ -91,9 +91,14 @@ namespace Bible
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             string title = txtTitle.Text;
-            int chapter = int.Parse(txtChapter.Text);
-            int verse = int.Parse(txtVerse.Text);
+            string chapter = txtChapter.Text;
+            string verse = txtVerse.Text;
             QuoteModel quote = JsonTool.ReadQuote(title,chapter,verse);
+
+            if (quote is null) {
+                MessageBox.Show("Cita no encontrada", "Alerta", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             if (text is null || !text.IsVisible)
             {

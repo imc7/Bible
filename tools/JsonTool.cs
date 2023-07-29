@@ -6,17 +6,33 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Bible.tools
 {
     class JsonTool
     {
         // Get quote
-        public static QuoteModel ReadQuote(string title, int chapter, int verse)
+        public static QuoteModel ReadQuote(string title, string chapter, string verse)
         {
-            QuoteModel response=null;
-
-            return response;
+            string path = $"{Constants.bookPath}{title}.json";
+            Uri uri = new Uri(path);
+            if (File.Exists(uri.LocalPath))
+            {
+                StreamReader sr = new StreamReader(path);
+                string json = sr.ReadToEnd();
+                List<QuoteModel> jsonObj = JsonConvert.DeserializeObject<List<QuoteModel>>(json);
+                foreach (QuoteModel i in jsonObj)
+                {
+                    if (
+                        i.Book.Equals(title, StringComparison.Ordinal) &&
+                        i.Chapter.Equals(chapter, StringComparison.Ordinal) &&
+                        i.Verse.Equals(verse, StringComparison.Ordinal)
+                        )
+                        return i;
+                }
+            }
+            return null;
         }
 
 

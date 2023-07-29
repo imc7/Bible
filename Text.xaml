@@ -7,7 +7,39 @@
         mc:Ignorable="d"
         Title="Text" Height="450" Width="800"
         WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="resources/background.png"/>
+    </Window.Background>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
+        <!--Controls-->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0">
+            
+        </Grid>
+        
+        
+        <!--Quote-->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="1">
+            <Label x:Name="lblText" 
+                   Content="Texto" 
+                   HorizontalAlignment="Left" 
+                   Margin="478,175,0,0" 
+                   VerticalAlignment="Top"
+                   FontSize="25"/>
+
+        </Grid>
+
     </Grid>
 </Window>
