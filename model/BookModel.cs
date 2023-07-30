@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Bible.model
 {
     class BookModel
     {
-        private string number { get; set; }
-        private string title { get; set; }
+        private string number;
+        private string title;
 
         // Constructors
         public BookModel(string number, string title)
@@ -18,22 +13,8 @@ namespace Bible.model
             this.title = title;
         }
 
-        // Setters and Getters
-        public void setNumber(string number)
-        {
-            this.number = number;
-        }
-        public void setTitle(string title)
-        {
-            this.title = title;
-        }
-        public string getNumber()
-        {
-            return number;
-        }
-        public string getTitle()
-        {
-            return title;
-        }
+        // Getters and setters
+        public string Number { get { return number; } set { number = value; } }
+        public string Title { get { return title; } set { title = value; } }
     }
 }

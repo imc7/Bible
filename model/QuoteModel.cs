@@ -3,10 +3,10 @@ namespace Bible.model
 {
     public class QuoteModel
     {
-        private string book { get; set; }
-        private string chapter { get; set; }
-        private string verse { get; set; }
-        private string text { get; set; }
+        private string book;
+        private string chapter;
+        private string verse;
+        private string text;
 
         // Constructors
         public QuoteModel(string book, string chapter, string verse, string text)

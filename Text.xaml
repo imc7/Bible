@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bible"
         mc:Ignorable="d"
-        Title="Text" Height="450" Width="800"
+        Icon="resources/bible.ico"
+        Title="Santa Biblia R.V. 1960" Height="450" Width="800"
         WindowState="Maximized">
     <Window.Background>
         <ImageBrush ImageSource="resources/background.png"/>
@@ -16,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
@@ -42,9 +43,10 @@
             <Label x:Name="lblText" 
                    Content="Texto" 
                    HorizontalAlignment="Left" 
-                   Margin="10,50,10,10" 
+                   Margin="10,80,10,10" 
                    VerticalAlignment="Top"
-                   FontSize="25"/>
+                   FontSize="30"
+                   />
 
         </Grid>
 

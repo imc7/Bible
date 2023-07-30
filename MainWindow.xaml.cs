@@ -138,6 +138,11 @@ namespace Bible
             if (e.Key == Key.Enter)
             {
                 txtChapter.Focus();
+                if(lbxBooks.Items.Count > 0)
+                {
+                    lbxBooks.SelectedIndex = 0;
+                    lbxBooks.Items.Clear();
+                }
             }
             else if (e.Key == Key.Space)
             {
@@ -166,7 +171,7 @@ namespace Bible
                     {
                         books.ForEach(book =>
                         {
-                            string t = book.getTitle();
+                            string t = book.Title;
                             StackPanel panel = new StackPanel();
                             panel.Orientation = Orientation.Horizontal;
                             panel.HorizontalAlignment = HorizontalAlignment.Left;
@@ -207,7 +212,6 @@ namespace Bible
                                 panel.Children.Add(label3);
                             }
                             lbxBooks.Items.Add(panel);
-
                         });
 
 

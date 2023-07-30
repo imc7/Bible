@@ -3,10 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Bible.tools
 {
@@ -17,8 +13,7 @@ namespace Bible.tools
         {
             // Do first letter of title upper
             title = title.ToLower();
-            title = title[0].ToString().ToUpper() + title.Substring(1);
-            MessageBox.Show("Testing: "+title);
+            title = normalizeBookName(title);
 
             string path = $"{Constants.bookPath}{title}.json";
             Uri uri = new Uri(path);
@@ -26,8 +21,8 @@ namespace Bible.tools
             {
                 StreamReader sr = new StreamReader(path);
                 string json = sr.ReadToEnd();
-                List<QuoteModel> jsonObj = JsonConvert.DeserializeObject<List<QuoteModel>>(json);
-                foreach (QuoteModel i in jsonObj)
+                List<QuoteModel> jsonList = JsonConvert.DeserializeObject<List<QuoteModel>>(json);
+                foreach (QuoteModel i in jsonList)
                 {
                     if (
                         i.Book.Equals(title, StringComparison.Ordinal) &&
@@ -46,17 +41,31 @@ namespace Bible.tools
         {
             StreamReader sr = new StreamReader(Constants.jsonPath);
             string json = sr.ReadToEnd();
-            List<BookModel> jsonObj = JsonConvert.DeserializeObject<List<BookModel>>(json);
+            List<BookModel> jsonList = JsonConvert.DeserializeObject<List<BookModel>>(json);
             List<BookModel> response = new List<BookModel>();
-            foreach (BookModel i in jsonObj)
+            foreach (BookModel i in jsonList)
             {
-                string item = StringTool.replaceAccents(i.getTitle().ToLower());
+                string item = StringTool.replaceAccents(i.Title.ToLower());
                 title = StringTool.replaceAccents(title.ToLower());
                 if (item.Contains(title, StringComparison.OrdinalIgnoreCase))
                     response.Add(i);
             }
-
             return response;
+        }
+
+        public static String normalizeBookName(string title)
+        {
+            StreamReader sr = new StreamReader(Constants.jsonPath);
+            string json = sr.ReadToEnd();
+            List<BookModel> jsonList = JsonConvert.DeserializeObject<List<BookModel>>(json);
+            foreach (BookModel i in jsonList)
+            {
+                string item = StringTool.replaceAccents(i.Title.ToLower());
+                title = StringTool.replaceAccents(title.ToLower());
+                if (item.Equals(title, StringComparison.OrdinalIgnoreCase))
+                    return i.Title;
+            }
+            return "";
         }
     }
 }
