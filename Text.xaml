@@ -32,10 +32,17 @@
         <Grid
             Grid.Row="0"
             Grid.Column="1">
+            <Label x:Name="lblQuote" 
+                   Content="Cita" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,10,10,10" 
+                   VerticalAlignment="Top"
+                   FontSize="40"
+                   FontWeight="Bold"/>
             <Label x:Name="lblText" 
                    Content="Texto" 
                    HorizontalAlignment="Left" 
-                   Margin="478,175,0,0" 
+                   Margin="10,50,10,10" 
                    VerticalAlignment="Top"
                    FontSize="25"/>
 

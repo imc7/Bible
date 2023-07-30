@@ -26,6 +26,7 @@ namespace Bible
 
         public void initializePlayText()
         {
+            lblQuote.Content = $"{quote.Book} {quote.Chapter}:{quote.Verse}";
             lblText.Content = quote.Text;
         }
     }

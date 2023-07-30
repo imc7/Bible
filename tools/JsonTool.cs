@@ -15,6 +15,11 @@ namespace Bible.tools
         // Get quote
         public static QuoteModel ReadQuote(string title, string chapter, string verse)
         {
+            // Do first letter of title upper
+            title = title.ToLower();
+            title = title[0].ToString().ToUpper() + title.Substring(1);
+            MessageBox.Show("Testing: "+title);
+
             string path = $"{Constants.bookPath}{title}.json";
             Uri uri = new Uri(path);
             if (File.Exists(uri.LocalPath))

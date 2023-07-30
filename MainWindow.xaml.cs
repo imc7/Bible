@@ -1,5 +1,6 @@
 ﻿using Bible.model;
 using Bible.tools;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,10 +94,11 @@ namespace Bible
             string title = txtTitle.Text;
             string chapter = txtChapter.Text;
             string verse = txtVerse.Text;
-            QuoteModel quote = JsonTool.ReadQuote(title,chapter,verse);
+            QuoteModel quote = JsonTool.ReadQuote(title, chapter, verse);
 
-            if (quote is null) {
-                MessageBox.Show("Cita no encontrada", "Alerta", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (quote is null)
+            {
+                MessageBox.Show("Cita no encontrada", "Alerta", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -119,7 +121,16 @@ namespace Bible
 
         private void txtTitle_previewTextInput(object sender, TextCompositionEventArgs e)
         {
-            enablePlayButton();
+            string value = txtTitle.Text + e.Text;
+            bool isMatchLetter = new Regex("^[a-zA-ZñÑáéíóúÁÉÍÓÚ123\\s]{1,12}$").IsMatch(value);
+            if (isMatchLetter && value.Length < (Constants.maxBookName + 1))
+            {
+                e.Handled = !isMatchLetter;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtTitle_KeyUp(object sender, KeyEventArgs e)
@@ -127,6 +138,19 @@ namespace Bible
             if (e.Key == Key.Enter)
             {
                 txtChapter.Focus();
+            }
+            else if (e.Key == Key.Space)
+            {
+                string newText = "";
+                string text=txtTitle.Text;
+                int i = 0;
+                newText = txtTitle.Text.Trim();
+                if (int.TryParse(text,out i))
+                {
+                    newText = $"{newText} ";
+                }
+                txtTitle.Text = newText;
+                txtTitle.CaretIndex = txtTitle.Text.Length;
             }
             else
             {
@@ -195,7 +219,7 @@ namespace Bible
 
         private void txtTitle_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            enablePlayButton();
         }
 
         private void txtChapter_previewTextInput(object sender, TextCompositionEventArgs e)
@@ -222,12 +246,37 @@ namespace Bible
 
         private void txtChapter_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Enter)
+            {
+                txtVerse.Focus();
+            }
+            else if (e.Key == Key.Space)
+            {
+                string newText = txtChapter.Text.Trim();
+                txtChapter.Text = newText;
+                txtChapter.CaretIndex = txtChapter.Text.Length;
+            }
         }
 
         private void txtVerse_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Enter &&
+                !string.IsNullOrEmpty(txtTitle.Text) &&
+                !string.IsNullOrWhiteSpace(txtTitle.Text) &&
+                !string.IsNullOrEmpty(txtChapter.Text) &&
+                !string.IsNullOrWhiteSpace(txtChapter.Text) &&
+                !string.IsNullOrEmpty(txtVerse.Text) &&
+                !string.IsNullOrWhiteSpace(txtVerse.Text)
+                )
+            {
+                btnPlay_Click(null, null);
+            }
+            else if (e.Key == Key.Space)
+            {
+                string newText = txtVerse.Text.Trim();
+                txtVerse.Text = newText;
+                txtVerse.CaretIndex = txtVerse.Text.Length;
+            }
         }
 
         private void txtVerse_previewTextInput(object sender, TextCompositionEventArgs e)
