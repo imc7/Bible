@@ -15,7 +15,6 @@
         MouseDown="Window_MouseDown"
         Closing="MainWindow_Closing"
         
-        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
