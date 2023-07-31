@@ -110,13 +110,11 @@ namespace Bible
             text.quote = quote;
             text.initializePlayText();
 
-
             txtTitle.Clear();
             txtChapter.Clear();
             txtVerse.Clear();
             lbxBooks.Items.Clear();
             txtTitle.Focus();
-
         }
 
         private void txtTitle_previewTextInput(object sender, TextCompositionEventArgs e)

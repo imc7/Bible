@@ -15,7 +15,7 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}" KeyUp="Window_KeyUp">
     <Window.Background>
         <ImageBrush ImageSource="resources/background.png"/>
     </Window.Background>
@@ -62,7 +62,7 @@
                     Width="40"
                     Height="40"
                     Cursor="Hand"
-                    ToolTip="Volver">
+                    ToolTip="Volver" Click="btnBoBack_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FFFFFF"/>
@@ -102,7 +102,7 @@
                     Width="40"
                     Height="40"
                     Cursor="Hand"
-                    ToolTip="Retroceder un versículo">
+                    ToolTip="Retroceder un versículo" Click="btnMinusVerse_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FFFFFF"/>
@@ -142,7 +142,7 @@
                     Width="40"
                     Height="40"
                     Cursor="Hand"
-                    ToolTip="Avanzar un capítulo">
+                    ToolTip="Avanzar un capítulo" Click="btnPlusChapter_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FFFFFF"/>
@@ -182,7 +182,7 @@
                     Width="40"
                     Height="40"
                     Cursor="Hand"
-                    ToolTip="Avanzar un versículo">
+                    ToolTip="Avanzar un versículo" Click="btnPlusVerse_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FFFFFF"/>
@@ -222,7 +222,7 @@
                     Width="40"
                     Height="40"
                     Cursor="Hand"
-                    ToolTip="Retroceder un capítulo">
+                    ToolTip="Retroceder un capítulo" Click="btnMinusChapter_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FFFFFF"/>
