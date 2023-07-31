@@ -36,11 +36,10 @@
 
             <Grid
                 Width="120"
-                Height="240"
+                Height="200"
                 VerticalAlignment="Bottom"
                 Margin="0,0,0,20">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
